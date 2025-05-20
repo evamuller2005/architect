@@ -1,0 +1,19 @@
+﻿@model List<ArchitectWeb.Models.Project>
+
+<h2>Seznam projektov</h2>
+
+<form asp-action="Search" method="post">
+    <input name="keyword" placeholder="Išči po naslovu ali opisu..." />
+    <button type="submit">Išči</button>
+</form>
+
+<ul>
+@foreach (var p in Model) {
+    <li>
+        <strong>@p.Title</strong> — @p.Description <br />
+        @if (!string.IsNullOrEmpty(p.ImagePath)) {
+            <img src="@p.ImagePath" style="max-width: 300px;" />
+        }
+    </li>
+}
+</ul>

@@ -1,0 +1,16 @@
+@model List<ArchitectWeb.Models.Project>
+
+<h2>Explore projekti</h2>
+
+@if (Model.Any()) {
+    <ul>
+    @foreach (var p in Model) {
+        <li>
+            <strong>@p.Title</strong> — @p.Description
+            [<a href="/Project/Details/@p.ProjectID">Podrobnosti</a>]
+        </li>
+    }
+    </ul>
+} else {
+    <p>Ni projektov za prikaz.</p>
+}

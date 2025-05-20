@@ -1,0 +1,11 @@
+<h2>Prijava</h2>
+
+@if (ViewBag.Error != null) {
+    <p style="color:red;">@ViewBag.Error</p>
+}
+
+<form method="post">
+    <label>Uporabniško ime</label><input name="username" /><br />
+    <label>Geslo</label><input name="password" type="password" /><br />
+    <button type="submit">Prijava</button>
+</form>

@@ -1,0 +1,21 @@
+@model ArchitectWeb.Models.Review
+@{
+    var pid = ViewBag.ProjectID;
+}
+
+<h2>Dodaj komentar in oceno</h2>
+
+<form asp-action="Add" asp-controller="Review" method="post">
+    <input type="hidden" name="projectId" value="@pid" />
+
+    <label>Ime:</label><br />
+    <input asp-for="Author" /><br />
+
+    <label>Komentar:</label><br />
+    <textarea asp-for="Comment"></textarea><br />
+
+    <label>Ocena (1–5):</label><br />
+    <input asp-for="Rating" type="number" min="1" max="5" /><br />
+
+    <button type="submit">Pošlji</button>
+</form>

@@ -1,0 +1,13 @@
+@model ArchitectWeb.Models.User
+
+<h2>Registracija</h2>
+
+<form method="post">
+    <label>Ime</label><input asp-for="FirstName" /><br />
+    <label>Priimek</label><input asp-for="LastName" /><br />
+    <label>Email</label><input asp-for="Email" /><br />
+    <label>Uporabniško ime</label><input asp-for="Username" /><br />
+    <span asp-validation-for="Username"></span><br />
+    <label>Geslo</label><input asp-for="Password" type="password" /><br />
+    <button type="submit">Registriraj se</button>
+</form>

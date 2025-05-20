@@ -1,0 +1,21 @@
+@model ArchitectWeb.Models.Project
+
+<h2>@Model.Title</h2>
+<p>@Model.Description</p>
+
+<p><strong>Slika:</strong> <img src="@Model.ImagePath" width="300" /></p>
+<p><strong>Objavljeno:</strong> @Model.DatePosted</p>
+
+<h3>Komentarji in ocene</h3>
+
+@if (Model.Reviews.Any()) {
+    <ul>
+    @foreach (var r in Model.Reviews) {
+        <li>⭐️ @r.Rating – <strong>@r.Author</strong>: @r.Comment (@r.Timestamp)</li>
+    }
+    </ul>
+} else {
+    <p>Ni še komentarjev.</p>
+}
+
+<a href="/Review/Add?projectId=@Model.ProjectID">+ Dodaj komentar</a>

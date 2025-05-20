@@ -1,0 +1,17 @@
+@model ArchitectWeb.Models.Project
+
+<h2>Dodaj nov projekt</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <label>Naslov</label>
+    <input asp-for="Title" />
+    <span asp-validation-for="Title"></span>
+
+    <label>Opis</label>
+    <textarea asp-for="Description"></textarea>
+
+    <label>Slika</label>
+    <input type="file" name="imageFile" />
+
+    <button type="submit">Objavi</button>
+</form>
